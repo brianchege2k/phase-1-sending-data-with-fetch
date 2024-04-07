@@ -4,8 +4,7 @@ function submitData(name, email) {
       name: name,
       email: email,
     };
-  
-    const options = {
+    const config = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -14,10 +13,10 @@ function submitData(name, email) {
       body: JSON.stringify(data)
     };
   
-    return fetch(url, options)
+    return fetch(url, config)
       .then(response => {
         if (!response.ok) {
-          throw new Error('Network response was n ot ok');
+          throw new Error('Network Error!');
         }
         return response.json();
       })
